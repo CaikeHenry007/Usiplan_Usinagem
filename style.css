@@ -244,7 +244,7 @@ h2 {
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px #ff000033;
+  box-shadow: 0 20px 40px #ffffff31;
 }
 
 .card .imagem {
@@ -348,6 +348,37 @@ footer {
   padding: 40px 0;
   text-align: center;
   font-size: 0.95em;
+}
+
+ul {
+  list-style: none;
+  gap: 25px;
+}
+
+a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; /* distancia da linha para o texto */
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #e53935; /* cor da linha */
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:hover {
+  color: #e53935;
 }
 
 /* Responsividade */
