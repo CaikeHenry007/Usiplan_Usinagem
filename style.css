@@ -55,6 +55,7 @@ nav ul {
 nav a {
   position: relative;
   color: #fff;
+  text-decoration: none;
 }
 
 nav a::after {
