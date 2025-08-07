@@ -293,6 +293,12 @@ h2 {
   max-width: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 12px #00000033;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px #00000052;
 }
 
 /* Contato */
