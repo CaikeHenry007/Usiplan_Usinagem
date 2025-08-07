@@ -86,48 +86,63 @@ nav a:hover {
 }
 
 /* Hero Section */
-.hero {
-  background: url("https://via.placeholder.com/1920x800") center/cover no-repeat;
-  height: 100vh;
-  color: #fff;
+#hero {
+  position: relative;
+  background-image: url("images/hero-bg.png"); /* Altere para o caminho correto da sua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
   text-align: center;
-  padding-top: 70px;
-  background-color: #111;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#hero .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* escurece o fundo */
+  z-index: 1;
 }
 
 .hero-content {
-  background: #000000b3;
-  padding: 40px;
-  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
-.hero h1 {
-  font-size: 3.5em;
-  margin-bottom: 10px;
-  letter-spacing: 1.2px;
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.hero p {
-  font-size: 1.3em;
-  margin-bottom: 20px;
-  color: #ddd;
+.hero-content p {
+  font-size: 1.25rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
 }
 
-.btn {
-  background: #e53935;
-  padding: 12px 25px;
-  color: #fff;
-  text-decoration: none;
+.btn-saiba-mais {
+  display: inline-block;
+  background-color: #e53935;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 9999px;
   font-weight: 600;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn:hover {
-  background: #c62828;
+.btn-saiba-mais:hover {
+  background-color: #c62828;
+  transform: translateY(-2px);
 }
 
 /* Seções */
