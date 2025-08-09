@@ -10,14 +10,19 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   color: #f5f5f5; /* se seu fundo for escuro */
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
@@ -26,8 +31,9 @@ p {
   font-weight: 400;
 }
 
-button, a {
-  font-family: 'Poppins', sans-serif;
+button,
+a {
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
 
@@ -178,8 +184,8 @@ h2 {
   background: #fff;
   border-radius: 12px;
   padding: 60px 30px;
-  box-shadow: 0 8px 30px rgb(0 0 0 / 0.1);
   margin-bottom: 80px;
+  text-align: center; /* Centraliza títulos, textos e listas */
 }
 
 #sobre h2,
@@ -194,6 +200,8 @@ h2 {
   color: #444;
   margin-bottom: 25px;
   max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.7;
 }
 
@@ -202,6 +210,7 @@ h2 {
   margin: 20px auto 40px auto;
   list-style: none;
   padding-left: 0;
+  text-align: left; /* Lista fica alinhada à esquerda, mas centralizada na tela */
 }
 
 #sobre ul li {
@@ -209,7 +218,7 @@ h2 {
   padding-left: 30px;
   margin-bottom: 15px;
   font-weight: 600;
-  color: #e53935; /* vermelho destaque */
+  color: #e53935;
 }
 
 #sobre ul li::before {
@@ -219,6 +228,28 @@ h2 {
   top: 0;
   color: #e53935;
   font-weight: bold;
+}
+
+/* Galeria de imagens */
+.sobre-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.sobre-images img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.sobre-images img:hover {
+  transform: scale(1.05);
 }
 
 /* Serviços */
