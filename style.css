@@ -118,9 +118,8 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #hero .overlay {
@@ -158,11 +157,11 @@ nav a:hover {
   border-radius: 9999px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-saiba-mais:hover {
+  color: #fff;
   background-color: #c62828;
   transform: translateY(-2px);
 }
@@ -413,18 +412,18 @@ footer {
   font-size: 0.95em;
 }
 
-ul {
+#rodape ul {
   list-style: none;
   gap: 25px;
 }
 
-a {
+#rodape a {
   position: relative;
   color: #fff;
   text-decoration: none;
 }
 
-a::after {
+#rodape a::after {
   content: "";
   position: absolute;
   bottom: -4px; /* distancia da linha para o texto */
@@ -436,11 +435,11 @@ a::after {
   transform: translateX(-50%);
 }
 
-a:hover::after {
+#rodape a:hover::after {
   width: 100%;
 }
 
-a:hover {
+#rodape a:hover {
   color: #e53935;
 }
 
