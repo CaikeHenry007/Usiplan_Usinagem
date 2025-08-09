@@ -110,81 +110,87 @@
     <section id="servicos">
       <div class="container">
         <h2>Serviços</h2>
-        <div class="cards-servicos">
-          <div class="card">
-            <div class="imagem">
-              <img src="images/torneamento.jpg" alt="Torneamento" />
-            </div>
-            <div class="conteudo">
-              <h3>Torneamento</h3>
-              <p>
-                Produção de peças cilíndricas com altíssimo nível de precisão,
-                ideal para componentes metálicos técnicos e industriais.
-              </p>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="imagem">
-              <img src="images/fresamento.jpg" alt="Fresamento" />
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="card">
+              <div class="imagem">
+                <img src="images/torneamento.jpg" alt="Torneamento" />
+              </div>
+              <div class="conteudo">
+                <h3>Torneamento</h3>
+                <p>
+                  Produção de peças cilíndricas com altíssimo nível de precisão,
+                  ideal para componentes metálicos técnicos e industriais.
+                </p>
+              </div>
             </div>
-            <div class="conteudo">
-              <h3>Fresamento</h3>
-              <p>
-                Usinagem precisa para criar superfícies planas, ranhuras e
-                geometrias complexas com acabamento impecável.
-              </p>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="imagem">
-              <img src="images/retifica.jpg" alt="Retífica" />
+            <div class="card">
+              <div class="imagem">
+                <img src="images/fresamento.jpg" alt="Fresamento" />
+              </div>
+              <div class="conteudo">
+                <h3>Fresamento</h3>
+                <p>
+                  Usinagem precisa para criar superfícies planas, ranhuras e
+                  geometrias complexas com acabamento impecável.
+                </p>
+              </div>
             </div>
-            <div class="conteudo">
-              <h3>Retífica</h3>
-              <p>
-                Acabamento fino com tolerância mínima, garantindo superfícies
-                lisas, dimensionamento exato e alta performance funcional.
-              </p>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="imagem">
-              <img src="images/prensa.jpg" alt="Prensa" />
+            <div class="card">
+              <div class="imagem">
+                <img src="images/retifica.jpg" alt="Retífica" />
+              </div>
+              <div class="conteudo">
+                <h3>Retífica</h3>
+                <p>
+                  Acabamento fino com tolerância mínima, garantindo superfícies
+                  lisas, dimensionamento exato e alta performance funcional.
+                </p>
+              </div>
             </div>
-            <div class="conteudo">
-              <h3>Prensa</h3>
-              <p>
-                Conformação de peças metálicas com força e precisão, ideal para
-                cortes, dobras e estampagens em larga escala.
-              </p>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="imagem">
-              <img src="images/plano de fundo.jpg" alt="Usinagem de Precisão" />
+            <div class="card">
+              <div class="imagem">
+                <img src="images/prensa.jpg" alt="Prensa" />
+              </div>
+              <div class="conteudo">
+                <h3>Prensa</h3>
+                <p>
+                  Conformação de peças metálicas com força e precisão, ideal
+                  para cortes, dobras e estampagens em larga escala.
+                </p>
+              </div>
             </div>
-            <div class="conteudo">
-              <h3>Usinagem de Precisão</h3>
-              <p>
-                Alta tecnologia e precisão para produção de peças complexas.
-              </p>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="imagem">
-              <img src="images/produtos.jpg" alt="Projetos Mecânicos" />
+            <div class="card">
+              <div class="imagem">
+                <img
+                  src="images/plano de fundo.jpg"
+                  alt="Usinagem de Precisão"
+                />
+              </div>
+              <div class="conteudo">
+                <h3>Usinagem de Precisão</h3>
+                <p>
+                  Alta tecnologia e precisão para produção de peças complexas.
+                </p>
+              </div>
             </div>
-            <div class="conteudo">
-              <h3>Projetos Mecânicos</h3>
-              <p>
-                Desenvolvimento de projetos sob medida com engenharia
-                especializada.
-              </p>
+
+            <div class="card">
+              <div class="imagem">
+                <img src="images/produtos.jpg" alt="Projetos Mecânicos" />
+              </div>
+              <div class="conteudo">
+                <h3>Projetos Mecânicos</h3>
+                <p>
+                  Desenvolvimento de projetos sob medida com engenharia
+                  especializada.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -263,6 +269,49 @@
         easing: "ease-in-out",
         once: true,
       });
+    </script>
+
+    <!--Script para Carousel-->
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const cards = document.querySelectorAll(".card");
+
+      let index = 0;
+
+      function getVisibleCards() {
+        if (window.innerWidth <= 768) {
+          return 1;
+        } else if (window.innerWidth <= 1024) {
+          return 2;
+        } else {
+          return 3;
+        }
+      }
+
+      function updateCarousel() {
+        const visibleCards = getVisibleCards();
+
+        // Ajusta o índice para não sair do limite
+        if (index > cards.length - visibleCards) {
+          index = 0; // volta pro começo ao invés de parar no final
+        }
+        if (index < 0) {
+          index = 0;
+        }
+
+        const cardWidth = cards[0].offsetWidth + 20; // largura + gap
+        carousel.style.transform = `translateX(${-index * cardWidth}px)`;
+      }
+
+      setInterval(() => {
+        index++;
+        updateCarousel();
+      }, 3000);
+
+      window.addEventListener("resize", updateCarousel);
+
+      // Inicializa a posição
+      updateCarousel();
     </script>
   </body>
 </html>
